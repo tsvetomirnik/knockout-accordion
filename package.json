@@ -1,0 +1,20 @@
+{
+  "name": "knockout-accordion",
+  "version": "0.0.1",
+  "browserify": {
+    "transform": [
+      "browserify-global-shim"
+    ]
+  },
+  "browserify-global-shim": {
+    "jQuery": "$",
+    "knockout": "ko"
+  },
+  "devDependencies": {
+    "browserify": "^4.2.1",
+    "browserify-global-shim": "^1.0.0",
+    "gulp": "~3.6.2",
+    "stringify": "^2.2.0",
+    "vinyl-source-stream": "^0.1.1"
+  }
+}
