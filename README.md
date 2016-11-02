@@ -1,10 +1,10 @@
 # Knockout Accordion
 
-Accordion Knockout Component based on Bootstrap.
+Accordion Knockout Component based on Bootstrap. 
 
 It's using the latest knockout features to demonstrate communication between components.
 
-
+[Demo](https://tsvetomirnik.github.io/knockout-accordion/)
 
 ## Install
 
