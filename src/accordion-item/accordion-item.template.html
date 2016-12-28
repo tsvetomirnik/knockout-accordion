@@ -1,9 +1,10 @@
 <div class="panel panel-default" data-bind="afterRender: afterRender()">
-  <div class="panel-heading" data-bind="click: headerClicked">
-    <h3 class="panel-title" data-bind="text: heading"></h3>
-  </div>
-  <div class="panel-body" data-bind="slideIn: isSelected()">
+    <!-- ko if: heading() -->
+        <!-- ko component: 'ko-accordion-item-heading' -->
+        <h3 class="panel-title" data-bind="text: $parent.heading"></h3>
+        <!-- /ko -->
+    <!-- /ko -->
+    
     <!-- ko template: { nodes: $componentTemplateNodes } -->
     <!-- /ko -->
-  </div>
 </div>
