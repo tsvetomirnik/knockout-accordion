@@ -14,7 +14,10 @@ export class AccordionViewModel {
     if (ko.isObservable(params.selectedIndex)) {
       this.selectedIndex = params.selectedIndex;
     } else {
-      this.selectedIndex = <KnockoutObservable<number>>ko.observable(params.selectedIndex ? ko.unwrap(params.selectedIndex) : undefined);
+      let selectedIndex = typeof params.selectedIndex !== 'undefined' ?
+        ko.unwrap(params.selectedIndex)
+        : undefined;
+      this.selectedIndex = ko.observable(selectedIndex);
     }
 
     this.selectedIndex.subscribe((value) => {
@@ -26,7 +29,7 @@ export class AccordionViewModel {
     this.items.push(item);
   }
 
-  setSelectedIndex(index: number) : void {
+  setSelectedIndex(index: number): void {
     let oldIndex = this.selectedIndex();
     let itemToSelect = this.items()[index];
     if (itemToSelect) {
@@ -36,7 +39,7 @@ export class AccordionViewModel {
     }
   }
 
-  selectItem(toSelect: AccordionItemViewModel) : void {
+  selectItem(toSelect: AccordionItemViewModel): void {
     this.selectedIndex(this.items.indexOf(toSelect));
   }
 }
